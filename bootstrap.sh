@@ -4,6 +4,7 @@ echo "export LD_LIBRARY_PATH=/home/vagrant/coin-cbc/lib" >> /home/vagrant/.bashr
 echo "#!/bin/bash" >> /home/vagrant/run.sh
 echo "cd /vagrant/projets/TriWizard" >> /home/vagrant/run.sh
 echo "/vagrant/projets/bin/python -W ignore /vagrant/projets/TriWizard/tournament.py -v -s" >> /home/vagrant/run.sh
+chmod +x /home/vagrant/run.sh
 chown vagrant:vagrant /home/vagrant/run.sh
 sudo apt-get update
 sudo apt-get upgrade -y
