@@ -22,6 +22,7 @@ Puis une fois dans la machine virtuelle :
 Cf le script run.sh pour voir la commande utilisée pour lancer le script. Le programme tournament.py prend les options suivantes :
 
     -h, --help        show this help message and exit
+    -d BASE_DE_DONNEES  chemin vers la base de données
     -b barre_minimum  Barre minimum à avoir pour acceder à MpInge
     -v                Afficher les assignations
     -s                Afficher des statistiques
