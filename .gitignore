@@ -65,12 +65,8 @@ env.bak/
 venv.bak/
 
 
-
-/projets/pip-selfcheck.json
-/.vagrant/
-/projets/bin
-/projets/include
-/projets/lib
-/projets/local
-/.DS_Store
-/.idea/
+.idea/
+bin/
+include/
+pip-selfcheck.json
+.vagrant/

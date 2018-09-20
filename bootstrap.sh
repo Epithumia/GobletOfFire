@@ -1,9 +1,9 @@
 #!/bin/bash
 
 echo "export LD_LIBRARY_PATH=/home/vagrant/coin-cbc/lib" >> /home/vagrant/.bashrc
-echo "#!/bin/bash" >> /home/vagrant/run.sh
-echo "cd /vagrant/projets/TriWizard" >> /home/vagrant/run.sh
-echo "/vagrant/projets/bin/python -W ignore /vagrant/projets/TriWizard/tournament.py -v -s" >> /home/vagrant/run.sh
+echo "#!/bin/bash" > /home/vagrant/run.sh
+echo "cd /vagrant/TriWizard" >> /home/vagrant/run.sh
+echo "/vagrant/bin/python -W ignore /vagrant/TriWizard/tournament.py -v -s" >> /home/vagrant/run.sh
 chmod +x /home/vagrant/run.sh
 chown vagrant:vagrant /home/vagrant/run.sh
 sudo apt-get update
@@ -14,7 +14,7 @@ cd /home/vagrant/coin-cbc
 ./configure -C
 make && make install
 sudo pip install virtualenv
-cd /vagrant/projets
+cd /vagrant/
 /usr/local/bin/virtualenv ./ --always-copy
 export COIN_INSTALL_DIR=/home/vagrant/coin-cbc/
 bin/pip install sqlalchemy zope.sqlalchemy transaction numpy==1.12.1

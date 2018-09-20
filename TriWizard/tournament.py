@@ -17,7 +17,7 @@ from special import special
 
 def tournament(args):
     # Configuration
-    engine = create_engine('sqlite:///etudiants.sqlite', echo=False)
+    engine = create_engine('sqlite:///' + args.bdd, echo=False)
     DBSession.configure(bind=engine)
 
     # On récupere les donnes de la BDD
@@ -28,7 +28,7 @@ def tournament(args):
 
     # Capacité des groupes
     capa_min_pec = 14
-    capa_max_pec = 15
+    capa_max_pec = 16
     capa_min_pel = 14
     capa_max_pel = 16
 
@@ -227,6 +227,8 @@ def tournament(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
         description='Répartir les etudiants dans les parcours.')
+    parser.add_argument('-d', default='etudiants.sqlite', metavar='BASE_DE_DONNEES',
+                        dest='bdd', action='store', type=str, help='chemin vers la base de données')
     parser.add_argument('-b', default=10, type=float, metavar='barre_minimum',
                         help='Barre minimum à avoir pour acceder à MpInge')
     parser.add_argument(
